@@ -1,6 +1,6 @@
-### 关于CS61A中的注意点和难点
+# 关于CS61A中的注意点和难点
 
-#### 1、Cats中的Problem 7
+## 1、Cats中的Problem 7
 
 差不多算是课程前中期top难度的问题，不过题目给了模版框架，给了思路上的提示。
 
@@ -24,15 +24,11 @@ def minimum_mewtations(typed, source, limit):
         return min(add, remove, substitute)
 ```
 
-
-
-#### 2、lab06的Q3，Q4
+## 2、lab06的Q3，Q4
 
 这两个问题并不难，但是要注意一点，Q3中的`make_change(amount, coins)`，是**不能直接修改coins**的，如果你直接修改coins，依旧可能过Q3的测试，但是Q4中会用到这个函数，由于修改coins而导致错误。
 
-
-
-#### 3、Ants中的Problem 5和Problem 9
+## 3、Ants中的Problem 5和Problem 9
 
 这两个问题中都涉及到对同一个place的所有bee攻击的操作，题目提示对于place.bees要进行拷贝后遍历，不然某个bee被移除后遍历会出现问题，而对于这段操作有个问题值得思考，那就是我们遍历的是拷贝的新列表的元素，而为何能通过拷贝的元素移除原列表的元素且对新列表无影响呢？
 
@@ -53,13 +49,13 @@ def reduce_health(self, amount):
 
 # Place类中的remove_insect方法
 def remove_insect(self, insect):
-	insect.remove_from(self)
+    insect.remove_from(self)
 
     
 # Bee类中的remove_from方法
 def remove_from(self, place):
-	place.bees.remove(self) # 将bee从原列表中删除
-	super().remove_from(place)
+    place.bees.remove(self) # 将bee从原列表中删除
+    super().remove_from(place)
 ```
 
 解释：
